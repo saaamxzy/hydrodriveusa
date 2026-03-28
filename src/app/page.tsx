@@ -377,7 +377,7 @@ function BookCTA() {
             Zero emissions, maximum adventure.
           </p>
           <a
-            href="https://turo.com"
+            href="https://turo.com/us/en/drivers/48895154"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
