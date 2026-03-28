@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "HydroDrive USA | Eco-Friendly Vehicle Rentals in Orange County",
+  description:
+    "Rent hydrogen fuel cell, electric, and hybrid vehicles in Irvine & Orange County. Zero-emission driving starting at $20/day. Book on Turo today.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="antialiased">{children}</body>
+    </html>
+  );
+}
