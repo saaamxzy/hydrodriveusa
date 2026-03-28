@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "HydroDrive USA | Eco-Friendly Vehicle Rentals in Orange County",
   description:
     "Rent hydrogen fuel cell, electric, and hybrid vehicles in Irvine & Orange County. Zero-emission driving starting at $20/day. Book on Turo today.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
