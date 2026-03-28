@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import reviews from "@/data/reviews.json";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -363,6 +364,145 @@ function Pricing() {
   );
 }
 
+function StarRating() {
+  return (
+    <div className="flex gap-0.5">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function Testimonials() {
+  const [current, setCurrent] = useState(0);
+  const totalSlides = Math.ceil(reviews.length / 3);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
+
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
+
+  // Auto-scroll every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
+    <section id="testimonials" className="py-24 bg-[var(--color-dark)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">What Our Guests Say</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            Real reviews from real drivers on Turo. 100% five-star experiences.
+          </p>
+        </div>
+
+        <div className="relative">
+          {/* Carousel container */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {Array.from({ length: totalSlides }).map((_, slideIdx) => (
+                <div
+                  key={slideIdx}
+                  className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 px-1"
+                >
+                  {reviews.slice(slideIdx * 3, slideIdx * 3 + 3).map((review, i) => (
+                    <div
+                      key={`${slideIdx}-${i}`}
+                      className="bg-[var(--color-dark-light)] rounded-2xl p-6 border border-white/5 hover:border-[var(--color-primary)]/20 transition-colors flex flex-col"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <Image
+                          src={review.profileImageUrl}
+                          alt={review.name}
+                          width={44}
+                          height={44}
+                          className="rounded-full"
+                        />
+                        <div>
+                          <a
+                            href={review.profileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white font-semibold hover:text-[var(--color-accent)] transition-colors"
+                          >
+                            {review.name}
+                          </a>
+                          <div className="text-gray-500 text-xs">{review.date}</div>
+                        </div>
+                      </div>
+
+                      <StarRating />
+
+                      <p className="text-gray-300 text-sm mt-3 flex-grow leading-relaxed">
+                        {review.reviewText
+                          ? `"${review.reviewText}"`
+                          : (
+                            <span className="text-gray-500 italic">Left a 5-star rating</span>
+                          )}
+                      </p>
+
+                      <div className="mt-4 pt-3 border-t border-white/5">
+                        <span className="text-gray-500 text-xs">{review.vehicle}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={prev}
+            className="absolute top-1/2 -translate-y-1/2 -left-2 md:-left-4 w-10 h-10 rounded-full bg-[var(--color-dark-light)] border border-white/10 flex items-center justify-center text-white hover:border-[var(--color-primary)]/40 transition-colors"
+            aria-label="Previous reviews"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={next}
+            className="absolute top-1/2 -translate-y-1/2 -right-2 md:-right-4 w-10 h-10 rounded-full bg-[var(--color-dark-light)] border border-white/10 flex items-center justify-center text-white hover:border-[var(--color-primary)]/40 transition-colors"
+            aria-label="Next reviews"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === current
+                    ? "bg-[var(--color-primary-light)] w-6"
+                    : "bg-white/20 hover:bg-white/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BookCTA() {
   return (
     <section id="book" className="py-24 bg-[var(--color-dark)]">
@@ -531,6 +671,7 @@ export default function Home() {
       <About />
       <Fleet />
       <Pricing />
+      <Testimonials />
       <BookCTA />
       <Contact />
       <Footer />
