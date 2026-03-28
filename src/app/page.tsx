@@ -19,7 +19,7 @@ function Header() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
-            {["About", "Fleet", "Pricing", "Careers", "Contact"].map((item) => (
+            {["About", "Fleet", "Pricing", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -28,6 +28,12 @@ function Header() {
                 {item}
               </a>
             ))}
+            <a
+              href="/career"
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            >
+              Careers
+            </a>
             <a
               href="#book"
               className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors"
@@ -53,7 +59,7 @@ function Header() {
 
         {menuOpen && (
           <div className="md:hidden pb-4 border-t border-white/10 mt-2 pt-4">
-            {["About", "Fleet", "Pricing", "Careers", "Contact"].map((item) => (
+            {["About", "Fleet", "Pricing", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -63,6 +69,13 @@ function Header() {
                 {item}
               </a>
             ))}
+            <a
+              href="/career"
+              className="block py-2 text-gray-300 hover:text-white transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Careers
+            </a>
             <a
               href="#book"
               className="inline-block mt-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors"
@@ -631,160 +644,30 @@ function Contact() {
 }
 
 function Careers() {
-  const responsibilities = [
-    "Check vehicles in and out while guiding customers through the rental process with professionalism.",
-    "Fuel, vacuum, and wipe down interiors so every vehicle meets HydroDrive LLC standards between rentals.",
-    "Inspect vehicles for damage upon return, document findings, and escalate issues quickly.",
-    "Track vehicle availability, mileage, and scheduling so the team always knows what's on the lot.",
-    "Coordinate with service, sales, and leadership to ensure the fleet is ready for the next driver.",
-  ];
-
-  const qualifications = [
-    "Valid California driver's license (required, non-negotiable) and confidence driving hydrogen-powered vehicles.",
-    "Customer service mindset with sharp attention to detail when inspecting vehicles or paperwork.",
-    "Experience in fleet, rental, automotive, hospitality, or operations is a plus — willing to train the right person.",
-  ];
-
-  const perks = [
-    "Drive impact by working with a modern hydrogen-powered fleet leading the local clean energy rental market.",
-    "Join a tight-knit, bilingual team that cares about each other and the Orange County community.",
-    "Grow with a mission-driven company committed to affordable, clean mobility for local communities.",
-  ];
-
   return (
     <section id="careers" className="py-24 bg-[var(--color-dark)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Join Our Team</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Help us make clean energy vehicles accessible for local communities. We&apos;re growing and looking for passionate people to join our mission.
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          {/* Job Card */}
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-accent)]/5 overflow-hidden">
-            {/* Job Header */}
-            <div className="p-8 border-b border-white/10">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] text-xs font-semibold uppercase tracking-wider">
-                  Now Hiring
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                  Full-Time / Part-Time
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                  On-Site
-                </span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Rental Fleet Manager
-              </h3>
-              <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
-                <span className="flex items-center gap-1.5">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                  Irvine, CA 92618
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  $25 - $30 / hour
-                </span>
-              </div>
-            </div>
-
-            {/* Job Body */}
-            <div className="p-8 space-y-8">
-              {/* About */}
-              <div>
-                <p className="text-gray-300 leading-relaxed">
-                  We&apos;re hiring a Rental Fleet Manager who keeps vehicles moving, customers smiling, and our hydrogen fleet spotless. You&apos;ll own the check-in/check-out workflow, coordinate availability with the team, and be the friendly face of our rental program.
-                </p>
-              </div>
-
-              {/* What You'll Do */}
-              <div>
-                <h4 className="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-[var(--color-primary-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  What You&apos;ll Do
-                </h4>
-                <ul className="space-y-3">
-                  {responsibilities.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-gray-400 text-sm">
-                      <svg className="w-5 h-5 text-[var(--color-primary-light)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* What You'll Bring */}
-              <div>
-                <h4 className="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                  What You&apos;ll Bring
-                </h4>
-                <ul className="space-y-3">
-                  {qualifications.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-gray-400 text-sm">
-                      <svg className="w-5 h-5 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Why HydroDrive */}
-              <div>
-                <h4 className="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
-                  </svg>
-                  Why HydroDrive LLC
-                </h4>
-                <ul className="space-y-3">
-                  {perks.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-gray-400 text-sm">
-                      <svg className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Apply CTA */}
-            <div className="p-8 bg-[var(--color-dark-light)]/50 border-t border-white/10 text-center">
-              <p className="text-gray-400 text-sm mb-4">
-                Interested? Apply through Indeed to get started.
-              </p>
-              <a
-                href="https://www.indeed.com/job/rental-fleet-manager-440aceb23eb91996"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-              >
-                Apply on Indeed
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                </svg>
-              </a>
-            </div>
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-primary)]/10 border border-white/10 p-12 md:p-16">
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10">
+            <span className="text-[var(--color-accent)] text-sm font-medium">
+              We&apos;re Hiring
+            </span>
           </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Explore a Career with HydroDrive
+          </h2>
+          <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+            Join our mission to make clean energy vehicles accessible for local communities. See our open positions and grow with us.
+          </p>
+          <a
+            href="/career"
+            className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+          >
+            View Open Positions
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -808,7 +691,7 @@ function Footer() {
           </p>
 
           <div className="flex gap-6">
-            {["About", "Fleet", "Pricing", "Careers", "Contact"].map((item) => (
+            {["About", "Fleet", "Pricing", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -817,6 +700,12 @@ function Footer() {
                 {item}
               </a>
             ))}
+            <a
+              href="/career"
+              className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+            >
+              Careers
+            </a>
           </div>
         </div>
       </div>
