@@ -630,6 +630,18 @@ function Footer() {
             >
               Careers
             </a>
+            <a
+              href="/privacy-policy"
+              className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+            >
+              Privacy
+            </a>
+            <a
+              href="/sms-terms"
+              className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
+            >
+              SMS Terms
+            </a>
           </div>
         </div>
       </div>
