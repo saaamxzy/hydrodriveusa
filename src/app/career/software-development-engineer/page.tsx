@@ -4,7 +4,7 @@ import TechnicalRolePage from "@/components/careers/TechnicalRolePage";
 export const metadata: Metadata = {
   title: "Software Development Engineer | Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC as a remote, full-time Software Development Engineer. $120,000-$140,000 per year to build our full-stack, AI, data, fleet, and voice applications.",
+    "Join HydroDrive LLC as a remote, full-time Software Development Engineer in an AI-forward daily workflow. $120,000-$140,000 per year.",
 };
 
 export default function SoftwareDevelopmentEngineerPage() {
@@ -13,6 +13,7 @@ export default function SoftwareDevelopmentEngineerPage() {
     "Build reliable, accessible full-stack features with React, Next.js, TypeScript, server-rendered interfaces, route handlers, and well-structured backend APIs.",
     "Develop and maintain Python and FastAPI services for asynchronous workflows, WebSockets, real-time audio, telephony events, and background processing.",
     "Apply AI technologies where they create measurable business value, including LLM APIs, retrieval-augmented generation, embeddings and vector search, tool calling, structured outputs, prompt design, evaluations, and human-in-the-loop safeguards.",
+    "Use AI coding assistants and agentic development tools throughout daily work for research, planning, implementation, debugging, test creation, code review, and documentation while independently validating their output.",
     "Design PostgreSQL data models, indexes, queries, transactions, migrations, and backfills that preserve data integrity as operational workflows evolve.",
     "Integrate and troubleshoot third-party systems such as Twilio, speech-to-text and text-to-speech providers, Turo data feeds, Lark, email delivery, and object storage.",
     "Strengthen authentication, role-based authorization, input validation, auditability, privacy controls, tests, and technical documentation across the applications.",
@@ -25,6 +26,7 @@ export default function SoftwareDevelopmentEngineerPage() {
     "Backend API development experience in Node.js/TypeScript or Python, with a working understanding of asynchronous programming and RESTful service design.",
     "Hands-on PostgreSQL experience covering relational data modeling, SQL, indexes, transactions, schema migrations, query debugging, and an ORM such as Prisma.",
     "Practical experience applying AI in production software, such as integrating language-model APIs, retrieval or vector search, tool/function calling, prompt contracts, guardrails, or evaluation workflows.",
+    "Demonstrated fluency with modern AI coding assistants and agents as part of a daily engineering workflow, including writing effective instructions, providing useful context, reviewing generated changes critically, and correcting failures.",
     "Experience integrating authenticated third-party APIs, webhooks, file or object storage, and external services while handling retries, timeouts, partial failures, and sensitive credentials.",
     "A track record of debugging across frontend, backend, database, and integration boundaries and adding focused automated tests to prevent regressions.",
     "Clear written communication and the ability to translate an operational problem into a scoped technical solution.",
@@ -49,7 +51,7 @@ export default function SoftwareDevelopmentEngineerPage() {
     <TechnicalRolePage
       title="Software Development Engineer"
       compensation="$120,000 - $140,000 per year"
-      overview="You will own the continuous development of the applications HydroDrive uses to run the business. The role spans staff-facing web products, backend services, operational databases, AI-assisted support, and real-time voice experiences. You should enjoy working across product and infrastructure boundaries, learning how the operation functions, and shipping practical improvements from idea through production."
+      overview="You will own the continuous development of the applications HydroDrive uses to run the business. The role spans staff-facing web products, backend services, operational databases, AI-assisted support, and real-time voice experiences. This is an AI-forward engineering environment, and you should be highly comfortable using AI assistants and coding agents to complete daily work efficiently while applying strong independent judgment. You should enjoy working across product and infrastructure boundaries, learning how the operation functions, and shipping practical improvements from idea through production."
       responsibilities={responsibilities}
       requiredExperience={requiredExperience}
       preferredExperience={preferredExperience}

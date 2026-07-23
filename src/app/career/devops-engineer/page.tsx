@@ -4,7 +4,7 @@ import TechnicalRolePage from "@/components/careers/TechnicalRolePage";
 export const metadata: Metadata = {
   title: "DevOps Engineer | Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC as a remote, full-time DevOps Engineer. $80,000-$100,000 per year to own reliability, databases, CI/CD, observability, recovery, and on-call response.",
+    "Join HydroDrive LLC as a remote, full-time DevOps Engineer in an AI-forward daily workflow. $80,000-$100,000 per year with formal on-call duties.",
 };
 
 export default function DevOpsEngineerPage() {
@@ -14,6 +14,7 @@ export default function DevOpsEngineerPage() {
     "Operate PostgreSQL under serverless, scheduled-job, and high-concurrency workloads by tuning connection pools, PgBouncer modes, indexes, transactions, timeouts, and query patterns.",
     "Investigate database downtime and degraded performance, including connection exhaustion, lock contention, slow queries, failed migrations, schema drift, missing columns, network failures, and provider incidents.",
     "Build observability across application, database, AI-provider, telephony, and WebSocket paths using structured logs, service health checks, metrics, traces, dashboards, service-level objectives, and actionable alerts.",
+    "Use AI assistants and agentic tools throughout daily operations work to investigate logs and incidents, analyze queries, draft automation, review configuration, and maintain runbooks while protecting credentials and verifying every proposed action.",
     "Manage deployments and runtime configuration across Vercel, Fly.io, Docker, managed PostgreSQL, background jobs, webhooks, and long-lived real-time voice connections.",
     "Maintain tested backup and disaster-recovery procedures, perform restore drills, define recovery objectives, and protect database dumps and operational data containing customer information.",
     "Establish secure secret-management and environment-promotion practices for database credentials, auth keys, telephony accounts, AI providers, email, and other third-party integrations.",
@@ -29,6 +30,7 @@ export default function DevOpsEngineerPage() {
     "Experience operating cloud or platform services such as Vercel, Fly.io, Supabase, Neon, or comparable application and managed-database providers.",
     "Experience implementing production monitoring and alerting with useful logs and metrics for API availability, database health, latency, error rates, resource saturation, and external dependencies.",
     "Scripting or programming ability in Bash, Python, or TypeScript for deployment automation, health checks, data-safe maintenance, and incident investigation.",
+    "Demonstrated fluency with modern AI assistants and coding agents in a daily DevOps workflow, with the judgment to validate generated commands, scripts, diagnoses, and infrastructure changes before they reach production.",
     "A security-first approach to secrets, least-privilege access, encrypted backups, dependency updates, and customer or employee data.",
   ];
 
@@ -50,7 +52,7 @@ export default function DevOpsEngineerPage() {
     <TechnicalRolePage
       title="DevOps Engineer"
       compensation="$80,000 - $100,000 per year"
-      overview="You will make the applications behind HydroDrive dependable, observable, secure, and straightforward to release. This is a hands-on reliability role spanning CI/CD, managed platforms, PostgreSQL operations, real-time voice infrastructure, incident response, and disaster recovery, including participation in a formal on-call rotation. You will work closely with the Software Development Engineer so new capabilities reach production without compromising data integrity or business continuity."
+      overview="You will make the applications behind HydroDrive dependable, observable, secure, and straightforward to release. This is a hands-on reliability role spanning CI/CD, managed platforms, PostgreSQL operations, real-time voice infrastructure, incident response, and disaster recovery, including participation in a formal on-call rotation. This is an AI-forward environment, and you should be highly comfortable using AI assistants and coding agents to accelerate daily investigation, automation, and documentation without compromising security or operational judgment. You will work closely with the Software Development Engineer so new capabilities reach production without compromising data integrity or business continuity."
       responsibilities={responsibilities}
       requiredExperience={requiredExperience}
       preferredExperience={preferredExperience}
