@@ -195,7 +195,7 @@ export default function TechnicalRolePage({
               </p>
               <a
                 href={`mailto:support@hydrodriveusa.com?subject=${encodeURIComponent(`${title} Application`)}`}
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
               >
                 Apply by Email
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -216,14 +216,14 @@ export default function TechnicalRolePage({
                 Hydro<span className="text-[var(--color-accent)]">Drive</span> USA
               </span>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} HydroDrive LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+              <Link href="/" className="text-gray-400 hover:text-gray-200 text-sm transition-colors">
                 Home
               </Link>
-              <Link href="/career" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+              <Link href="/career" className="text-gray-400 hover:text-gray-200 text-sm transition-colors">
                 Careers
               </Link>
             </div>
