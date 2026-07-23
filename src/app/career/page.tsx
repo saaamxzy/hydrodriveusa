@@ -5,10 +5,37 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC and help make clean energy vehicles accessible for local communities. View our open positions in Irvine, CA.",
+    "Join HydroDrive LLC and help build the operations, software, and infrastructure behind accessible clean-energy mobility. View our Irvine and remote openings.",
 };
 
 export default function CareerPage() {
+  const positions = [
+    {
+      title: "Rental Fleet Manager",
+      href: "/career/rental-fleet-manager",
+      employmentType: "Full-Time / Part-Time",
+      location: "Irvine, CA",
+      compensation: "$25 - $30 / hour",
+      department: "Operations",
+    },
+    {
+      title: "Software Development Engineer",
+      href: "/career/software-development-engineer",
+      employmentType: "Full-Time",
+      location: "Remote",
+      compensation: "$120,000 - $140,000 / year",
+      department: "Technology",
+    },
+    {
+      title: "DevOps Engineer",
+      href: "/career/devops-engineer",
+      employmentType: "Full-Time",
+      location: "Remote",
+      compensation: "$80,000 - $100,000 / year",
+      department: "Technology",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-[var(--color-dark)]">
       {/* Header */}
@@ -58,58 +85,62 @@ export default function CareerPage() {
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-2">Open Positions</h2>
             <p className="text-gray-400">
-              1 open role
+              {positions.length} open roles
             </p>
           </div>
 
-          {/* Job Card */}
-          <Link
-            href="/career/rental-fleet-manager"
-            className="block rounded-2xl border border-white/10 bg-[var(--color-dark-light)] p-8 hover:border-[var(--color-primary)]/40 transition-all group"
-          >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] text-xs font-semibold uppercase tracking-wider">
-                    Now Hiring
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                    Full-Time / Part-Time
-                  </span>
+          <div className="space-y-4">
+            {positions.map((position) => (
+              <Link
+                key={position.href}
+                href={position.href}
+                className="block rounded-2xl border border-white/10 bg-[var(--color-dark-light)] p-8 hover:border-[var(--color-primary)]/40 transition-all group"
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-accent-light)] text-xs font-semibold uppercase tracking-wider">
+                        Now Hiring
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
+                        {position.employmentType}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">
+                      {position.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
+                      <span className="flex items-center gap-1.5">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        {position.location}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {position.compensation}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 14.15v4.073a2.625 2.625 0 01-2.625 2.625H6.375a2.625 2.625 0 01-2.625-2.625V14.15M15 5.625V4.5A2.25 2.25 0 0012.75 2.25h-1.5A2.25 2.25 0 009 4.5v1.125m11.25 0H3.75A1.5 1.5 0 002.25 7.125v4.5a1.5 1.5 0 001.5 1.5h16.5a1.5 1.5 0 001.5-1.5v-4.5a1.5 1.5 0 00-1.5-1.5zM8.25 12.75v.008m7.5-.008v.008" />
+                        </svg>
+                        {position.department}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-[var(--color-accent-light)] font-medium group-hover:gap-3 transition-all">
+                    View Details
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors">
-                  Rental Fleet Manager
-                </h3>
-                <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                    Irvine, CA
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    $25 - $30 / hour
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-                    </svg>
-                    On-Site
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-[var(--color-primary-light)] font-medium group-hover:gap-3 transition-all">
-                View Details
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </Link>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
