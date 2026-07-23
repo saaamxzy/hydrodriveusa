@@ -410,9 +410,9 @@ function Testimonials() {
           </div>
 
           <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5 text-center">
-            <div className="text-5xl font-bold text-white mb-2">500+</div>
+            <div className="text-5xl font-bold text-white mb-2">1300+</div>
             <div className="text-[var(--color-primary-light)] text-lg font-semibold mb-1">Verified</div>
-            <div className="text-gray-400 text-sm">Guest Reviews on Turo</div>
+            <div className="text-gray-400 text-sm">Trips Completed on Turo</div>
           </div>
 
           <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5 text-center">
