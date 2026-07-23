@@ -35,6 +35,7 @@ export default function SoftwareDevelopmentEngineerPage() {
     "Voice AI or telephony systems using Twilio, speech recognition, speech synthesis, call routing, recording, or live transcription.",
     "Hybrid search, PostgreSQL full-text search, pgvector, embeddings lifecycle management, AI quality benchmarking, or latency and token-cost optimization.",
     "NextAuth or custom session authentication, role-based access control, bilingual products, and security-sensitive internal tools.",
+    "Chrome or other browser-extension development, including Manifest V3, content scripts, authenticated extension-to-API communication, and extension release workflows.",
     "Vercel, Fly.io, Docker, Supabase or another managed PostgreSQL platform, CI pipelines, and production incident support.",
   ];
 

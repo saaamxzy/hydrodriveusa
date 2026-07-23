@@ -99,7 +99,7 @@ export default function TechnicalRolePage({
       </header>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <nav className="flex items-center gap-2 text-sm text-gray-500" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-sm text-gray-400" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -116,14 +116,14 @@ export default function TechnicalRolePage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-primary-light)] text-xs font-semibold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-accent-light)] text-xs font-semibold uppercase tracking-wider">
                 Now Hiring
               </span>
               <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
                 Full-Time
               </span>
               <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                Technology
+                Technology Team
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

@@ -17,7 +17,7 @@ export default function DevOpsEngineerPage() {
     "Manage deployments and runtime configuration across Vercel, Fly.io, Docker, managed PostgreSQL, background jobs, webhooks, and long-lived real-time voice connections.",
     "Maintain tested backup and disaster-recovery procedures, perform restore drills, define recovery objectives, and protect database dumps and operational data containing customer information.",
     "Establish secure secret-management and environment-promotion practices for database credentials, auth keys, telephony accounts, AI providers, email, and other third-party integrations.",
-    "Lead incident response, write runbooks and post-incident reviews, identify recurring failure patterns, and automate preventative checks with the Software Development Engineer.",
+    "Improve incident readiness with runbooks, health checks, and post-incident reviews; identify recurring failure patterns and automate preventative checks with the Software Development Engineer.",
   ];
 
   const requiredExperience = [
