@@ -4,7 +4,7 @@ import TechnicalRolePage from "@/components/careers/TechnicalRolePage";
 export const metadata: Metadata = {
   title: "DevOps Engineer | Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC as a DevOps Engineer and own the reliability, database operations, CI/CD, observability, and recovery practices behind our business applications.",
+    "Join HydroDrive LLC as a remote, full-time DevOps Engineer. $80,000-$100,000 per year to own reliability, databases, CI/CD, observability, recovery, and on-call response.",
 };
 
 export default function DevOpsEngineerPage() {
@@ -18,6 +18,7 @@ export default function DevOpsEngineerPage() {
     "Maintain tested backup and disaster-recovery procedures, perform restore drills, define recovery objectives, and protect database dumps and operational data containing customer information.",
     "Establish secure secret-management and environment-promotion practices for database credentials, auth keys, telephony accounts, AI providers, email, and other third-party integrations.",
     "Improve incident readiness with runbooks, health checks, and post-incident reviews; identify recurring failure patterns and automate preventative checks with the Software Development Engineer.",
+    "Participate in a formal on-call rotation, respond to production incidents, communicate service impact, and help restore critical business systems safely.",
   ];
 
   const requiredExperience = [
@@ -48,7 +49,8 @@ export default function DevOpsEngineerPage() {
   return (
     <TechnicalRolePage
       title="DevOps Engineer"
-      overview="You will make the applications behind HydroDrive dependable, observable, secure, and straightforward to release. This is a hands-on reliability role spanning CI/CD, managed platforms, PostgreSQL operations, real-time voice infrastructure, incident response, and disaster recovery. You will work closely with the Software Development Engineer so new capabilities reach production without compromising data integrity or business continuity."
+      compensation="$80,000 - $100,000 per year"
+      overview="You will make the applications behind HydroDrive dependable, observable, secure, and straightforward to release. This is a hands-on reliability role spanning CI/CD, managed platforms, PostgreSQL operations, real-time voice infrastructure, incident response, and disaster recovery, including participation in a formal on-call rotation. You will work closely with the Software Development Engineer so new capabilities reach production without compromising data integrity or business continuity."
       responsibilities={responsibilities}
       requiredExperience={requiredExperience}
       preferredExperience={preferredExperience}

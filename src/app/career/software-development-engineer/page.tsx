@@ -4,7 +4,7 @@ import TechnicalRolePage from "@/components/careers/TechnicalRolePage";
 export const metadata: Metadata = {
   title: "Software Development Engineer | Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC as a Software Development Engineer and continuously develop the full-stack, AI, data, fleet, and voice applications that run our business.",
+    "Join HydroDrive LLC as a remote, full-time Software Development Engineer. $120,000-$140,000 per year to build our full-stack, AI, data, fleet, and voice applications.",
 };
 
 export default function SoftwareDevelopmentEngineerPage() {
@@ -48,6 +48,7 @@ export default function SoftwareDevelopmentEngineerPage() {
   return (
     <TechnicalRolePage
       title="Software Development Engineer"
+      compensation="$120,000 - $140,000 per year"
       overview="You will own the continuous development of the applications HydroDrive uses to run the business. The role spans staff-facing web products, backend services, operational databases, AI-assisted support, and real-time voice experiences. You should enjoy working across product and infrastructure boundaries, learning how the operation functions, and shipping practical improvements from idea through production."
       responsibilities={responsibilities}
       requiredExperience={requiredExperience}

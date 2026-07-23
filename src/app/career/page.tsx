@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC and help build the operations, software, and infrastructure behind accessible clean-energy mobility. View our open positions in Irvine, CA.",
+    "Join HydroDrive LLC and help build the operations, software, and infrastructure behind accessible clean-energy mobility. View our Irvine and remote openings.",
 };
 
 export default function CareerPage() {
@@ -22,16 +22,16 @@ export default function CareerPage() {
       title: "Software Development Engineer",
       href: "/career/software-development-engineer",
       employmentType: "Full-Time",
-      location: "Irvine, CA",
-      compensation: "Based on experience",
+      location: "Remote",
+      compensation: "$120,000 - $140,000 / year",
       department: "Technology",
     },
     {
       title: "DevOps Engineer",
       href: "/career/devops-engineer",
       employmentType: "Full-Time",
-      location: "Irvine, CA",
-      compensation: "Based on experience",
+      location: "Remote",
+      compensation: "$80,000 - $100,000 / year",
       department: "Technology",
     },
   ];
