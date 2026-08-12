@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rental Fleet Manager | Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC as a Rental Fleet Manager in Irvine, CA. $25-$30/hr, full-time or part-time. Help us lead the local clean energy rental market.",
+    "Join HydroDrive LLC as a Rental Fleet Manager in Costa Mesa, CA 92626. $22-$25/hr, full-time or part-time. Help us lead the local clean energy rental market.",
 };
 
 export default function RentalFleetManagerPage() {
@@ -91,13 +91,13 @@ export default function RentalFleetManagerPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                Irvine, CA 92618
+                Costa Mesa, CA 92626
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                $25 - $30 / hour
+                $22 - $25 / hour
               </span>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function RentalFleetManagerPage() {
               <div>
                 <h2 className="text-white font-semibold text-xl mb-4">About HydroDrive LLC</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  HydroDrive LLC is a local, community-rooted car rental company in Irvine, CA, dedicated to making clean energy vehicles accessible and affordable for everyone. Our hydrogen-forward rental fleet and bilingual (English &amp; Chinese) team make us a standout mobility partner for Orange County.
+                  HydroDrive LLC is a local, community-rooted car rental company in Orange County, CA, dedicated to making clean energy vehicles accessible and affordable for everyone. Our hydrogen-forward rental fleet and bilingual (English &amp; Chinese) team make us a standout mobility partner for Orange County.
                 </p>
               </div>
 
@@ -174,13 +174,13 @@ export default function RentalFleetManagerPage() {
                     <svg className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    $25 &ndash; $30 per hour, based on experience
+                    $22 &ndash; $25 per hour, based on experience
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Full-time or Part-time, on-site in Irvine, CA (92618)
+                    Full-time or Part-time, on-site in Costa Mesa, CA (92626)
                   </li>
                 </ul>
               </div>

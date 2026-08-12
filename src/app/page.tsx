@@ -101,7 +101,7 @@ function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
         <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10">
           <span className="text-[var(--color-accent)] text-sm font-medium">
-            Zero-Emission Vehicle Rentals
+            Eco-Friendly Vehicle Rentals
           </span>
         </div>
 
@@ -113,7 +113,7 @@ function Hero() {
         </h1>
 
         <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-          Explore Southern California in eco-friendly hydrogen fuel cell, electric, and hybrid vehicles.
+          Explore Southern California in hydrogen fuel cell, electric, hybrid, and fuel-efficient gas vehicles.
           Starting at just <span className="text-white font-semibold">$20/day</span>.
         </p>
 
@@ -135,7 +135,7 @@ function Hero() {
         <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
           {[
             { value: "$20+", label: "Per Day" },
-            { value: "0", label: "Emissions" },
+            { value: "Lower", label: "Emissions" },
             { value: "45%", label: "Off Monthly" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
@@ -157,9 +157,9 @@ function About() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
         </svg>
       ),
-      title: "Clean Energy Fleet",
+      title: "Lower-Emission Fleet",
       description:
-        "Our vehicles run on hydrogen fuel cells, electricity, and hybrid technology — reducing your carbon footprint to zero.",
+        "Choose from hydrogen fuel cell, electric, hybrid, and fuel-efficient gas vehicles designed to reduce your carbon footprint.",
     },
     {
       icon: (
@@ -202,8 +202,8 @@ function About() {
             Why HydroDrive?
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            We specialize in eco-friendly transportation solutions, offering zero-emission
-            driving experiences across Southern California.
+            We specialize in eco-friendly transportation solutions, offering lower-emission
+            driving options across Southern California.
           </p>
         </div>
 
@@ -231,7 +231,7 @@ function Fleet() {
     {
       type: "Hydrogen Fuel Cell",
       tagline: "The future of driving",
-      description: "Experience cutting-edge hydrogen fuel cell technology. Refuel in minutes, drive for hundreds of miles with zero emissions.",
+      description: "Experience cutting-edge hydrogen fuel cell technology. Refuel in minutes, drive for hundreds of miles with zero tailpipe emissions.",
       gradient: "from-emerald-500/20 to-teal-500/20",
       accent: "text-emerald-400",
       border: "border-emerald-500/20",
@@ -260,7 +260,7 @@ function Fleet() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Our Fleet</h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Choose from our range of clean energy vehicles, all mechanic-verified and ready to drive.
+            Choose from our range of eco-friendly and fuel-efficient vehicles, all mechanic-verified and ready to drive.
           </p>
         </div>
 
@@ -450,7 +450,7 @@ function BookCTA() {
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
             Browse our fleet on Turo and book your eco-friendly ride today.
-            Zero emissions, maximum adventure.
+            Lower emissions, maximum adventure.
           </p>
           <a
             href="https://turo.com/us/en/host/48895154"
@@ -490,8 +490,8 @@ function Contact() {
                 </div>
                 <div>
                   <div className="text-gray-500 text-sm">Phone</div>
-                  <a href="tel:9188886631" className="text-white font-medium hover:text-[var(--color-accent)] transition-colors">
-                    (918) 888-6631
+                  <a href="tel:9182388688" className="text-white font-medium hover:text-[var(--color-accent)] transition-colors">
+                    (918) 238-8688
                   </a>
                 </div>
               </div>
@@ -528,7 +528,7 @@ function Contact() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                window.location.href = "tel:9188886631";
+                window.location.href = "tel:9182388688";
               }}
               className="space-y-4"
             >
