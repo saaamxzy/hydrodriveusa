@@ -74,7 +74,7 @@ export default function CareerPage() {
             Join Our Mission
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Help us make clean energy vehicles accessible and affordable for everyone. We&apos;re a community-rooted team in Costa Mesa, CA, and we&apos;re growing.
+            Help us make clean energy vehicles accessible and affordable for everyone. We&apos;re a community-rooted team in Orange County, CA, and we&apos;re growing.
           </p>
         </div>
       </section>

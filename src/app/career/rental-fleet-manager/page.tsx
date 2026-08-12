@@ -109,7 +109,7 @@ export default function RentalFleetManagerPage() {
               <div>
                 <h2 className="text-white font-semibold text-xl mb-4">About HydroDrive LLC</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  HydroDrive LLC is a local, community-rooted car rental company in Costa Mesa, CA, dedicated to making clean energy vehicles accessible and affordable for everyone. Our hydrogen-forward rental fleet and bilingual (English &amp; Chinese) team make us a standout mobility partner for Orange County.
+                  HydroDrive LLC is a local, community-rooted car rental company in Orange County, CA, dedicated to making clean energy vehicles accessible and affordable for everyone. Our hydrogen-forward rental fleet and bilingual (English &amp; Chinese) team make us a standout mobility partner for Orange County.
                 </p>
               </div>
 
