@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Careers | HydroDrive USA",
   description:
-    "Join HydroDrive LLC and help build the operations, software, and infrastructure behind accessible clean-energy mobility. View our Irvine and remote openings.",
+    "Join HydroDrive LLC and help build the operations, software, and infrastructure behind accessible clean-energy mobility. View our Costa Mesa and remote openings.",
 };
 
 export default function CareerPage() {
@@ -14,8 +14,8 @@ export default function CareerPage() {
       title: "Rental Fleet Manager",
       href: "/career/rental-fleet-manager",
       employmentType: "Full-Time / Part-Time",
-      location: "Irvine, CA",
-      compensation: "$25 - $30 / hour",
+      location: "Costa Mesa, CA",
+      compensation: "$22 - $25 / hour",
       department: "Operations",
     },
     {
@@ -74,7 +74,7 @@ export default function CareerPage() {
             Join Our Mission
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Help us make clean energy vehicles accessible and affordable for everyone. We&apos;re a community-rooted team in Irvine, CA, and we&apos;re growing.
+            Help us make clean energy vehicles accessible and affordable for everyone. We&apos;re a community-rooted team in Costa Mesa, CA, and we&apos;re growing.
           </p>
         </div>
       </section>

@@ -40,7 +40,7 @@ export default function SmsTermsPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-3">Program description.</h2>
               <p>
-                Hydrodrive&rsquo;s customer service line (+1 916-668-4285) may send you SMS
+                Hydrodrive&rsquo;s customer service line (+1 918-238-8688) may send you SMS
                 messages at your request during or after a call &mdash; for example, to confirm a
                 callback time, share a reservation detail, or send a link you asked for.
               </p>
@@ -75,7 +75,7 @@ export default function SmsTermsPage() {
 
             <section>
               <p className="font-bold text-white">
-                For help, reply HELP or contact us at support@hydrodriveusa.com / +1 (916) 668-4285.
+                For help, reply HELP or contact us at support@hydrodriveusa.com / +1 (918) 238-8688.
               </p>
             </section>
 

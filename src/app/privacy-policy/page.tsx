@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
                 asked us to share.
               </p>
               <p className="mb-4">
-                SMS messages are sent via Twilio from <span className="text-white font-medium">+1 (916) 668-4285</span>.
+                SMS messages are sent via Twilio from <span className="text-white font-medium">+1 (918) 238-8688</span>.
                 Messages are sent only to the phone number you called from and only when you ask
                 our agent (including our voice AI auto-attendant, &ldquo;Sona&rdquo;) to text you.
               </p>
