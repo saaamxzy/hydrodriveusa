@@ -15,7 +15,7 @@ export default function SmsTermsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="HydroDrive Logo" width={36} height={36} className="rounded-full" />
+              <Image src="/logo.png" alt="" width={36} height={36} className="rounded-full" unoptimized />
               <span className="text-white font-bold text-xl">
                 Hydro<span className="text-[var(--color-accent)]">Drive</span>
               </span>

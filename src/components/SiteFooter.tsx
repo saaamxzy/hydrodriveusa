@@ -23,6 +23,7 @@ export default function SiteFooter() {
               width={28}
               height={28}
               className="rounded-full"
+              unoptimized
             />
             <span className="font-bold text-white">
               Hydro<span className="text-[var(--color-accent)]">Drive</span> USA
