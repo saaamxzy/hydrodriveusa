@@ -43,7 +43,7 @@ export default function CareerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="HydroDrive Logo" width={36} height={36} className="rounded-full" />
+              <Image src="/logo.png" alt="" width={36} height={36} className="rounded-full" unoptimized />
               <span className="text-white font-bold text-xl">
                 Hydro<span className="text-[var(--color-accent)]">Drive</span>
               </span>
@@ -144,25 +144,6 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[var(--color-dark)] border-t border-white/5 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <Image src="/logo.png" alt="HydroDrive Logo" width={28} height={28} className="rounded-full" />
-              <span className="text-white font-bold">
-                Hydro<span className="text-[var(--color-accent)]">Drive</span> USA
-              </span>
-            </div>
-            <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} HydroDrive LLC. All rights reserved.
-            </p>
-            <Link href="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
-              Home
-            </Link>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
