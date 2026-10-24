@@ -19,9 +19,9 @@ function CheckList({
   colorClass: string;
 }) {
   return (
-    <ul className="space-y-3">
+    <ul className="job-list">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-gray-400">
+        <li key={item}>
           <svg
             className={`w-5 h-5 ${colorClass} shrink-0 mt-0.5`}
             fill="none"
@@ -55,7 +55,7 @@ function SectionHeading({
   };
 
   return (
-    <h2 className="text-white font-semibold text-xl mb-4 flex items-center gap-2">
+    <h2>
       <svg
         className={`w-5 h-5 ${colorClass}`}
         fill="none"
@@ -80,138 +80,141 @@ export default function TechnicalRolePage({
   impact,
 }: TechnicalRolePageProps) {
   return (
-    <main className="min-h-screen bg-[var(--color-dark)]">
-      <header className="bg-[var(--color-dark)]/95 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="" width={36} height={36} className="rounded-full" unoptimized />
-              <span className="text-white font-bold text-xl">
-                Hydro<span className="text-[var(--color-accent)]">Drive</span>
-              </span>
-            </Link>
-            <Link
-              href="/career"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-            >
-              All Positions
-            </Link>
-          </div>
+    <main>
+      <header className="site-header">
+        <div className="container header-row">
+          <Link href="/" className="brand">
+            <Image src="/logo.png" alt="" width={36} height={36} className="rounded-full" unoptimized />
+            <span className="brand-name">
+              Hydro<span className="brand-accent">Drive</span>
+            </span>
+          </Link>
+          <Link
+            href="/career"
+            className="back-link"
+          >
+            All Positions
+          </Link>
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <nav className="flex items-center gap-2 text-sm text-gray-400" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
+      <div className="container">
+        <nav className="breadcrumbs" aria-label="Breadcrumb">
+          <Link href="/" className="text-link">Home</Link>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-          <Link href="/career" className="hover:text-gray-300 transition-colors">Careers</Link>
+          <Link href="/career" className="text-link">Careers</Link>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-          <span className="text-gray-300">{title}</span>
+          <span aria-current="page">{title}</span>
         </nav>
       </div>
 
-      <section className="py-12 pb-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-accent-light)] text-xs font-semibold uppercase tracking-wider">
-                Now Hiring
-              </span>
-              <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                Full-Time
-              </span>
-              <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                Remote
-              </span>
-              <span className="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-medium">
-                Technology Team
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-5 text-gray-400">
-              <span className="flex items-center gap-1.5">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-                Remote
-              </span>
-              <span className="flex items-center gap-1.5">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {compensation}
-              </span>
-            </div>
+      <section className="container job-layout">
+        <div className="job-summary">
+          <h1 className="job-title">
+            {title}
+          </h1>
+          <div className="job-meta">
+            <span>
+              Now Hiring
+            </span>
+            <span>
+              Full-Time
+            </span>
+            <span>
+              Remote
+            </span>
+            <span>
+              Technology Team
+            </span>
           </div>
+          <div className="job-meta">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              Remote
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {compensation}
+            </span>
+          </div>
+          <div className="job-apply">
+            <p>
+              Interested in building the systems behind HydroDrive? Send us your resume and a brief introduction.
+            </p>
+            <a
+              href={`mailto:support@hydrodriveusa.com?subject=${encodeURIComponent(`${title} Application`)}`}
+              className="button"
+            >
+              Apply by Email
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8.25l8.378 5.027a1.25 1.25 0 001.244 0L21 8.25M5.25 19.5h13.5A2.25 2.25 0 0021 17.25v-10.5A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75v10.5a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </a>
+          </div>
+        </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[var(--color-dark-light)] overflow-hidden">
-            <div className="p-8 md:p-10 space-y-10">
-              <div>
-                <h2 className="text-white font-semibold text-xl mb-4">About HydroDrive LLC</h2>
-                <p className="text-gray-400 leading-relaxed">
-                  HydroDrive LLC is a community-rooted clean-mobility company in Irvine, CA. Our software connects the day-to-day work behind vehicle rentals, fleet operations, staff coordination, customer support, and AI-assisted communications.
-                </p>
-              </div>
+        <div className="job-content">
+          <section className="job-section">
+            <h2>About HydroDrive LLC</h2>
+            <p>
+              HydroDrive LLC is a community-rooted clean-mobility company in Irvine, CA. Our software connects the day-to-day work behind vehicle rentals, fleet operations, staff coordination, customer support, and AI-assisted communications.
+            </p>
+          </section>
 
-              <div>
-                <h2 className="text-white font-semibold text-xl mb-4">Role Overview</h2>
-                <p className="text-gray-400 leading-relaxed">{overview}</p>
-              </div>
+          <section className="job-section">
+            <h2>Role Overview</h2>
+            <p>{overview}</p>
+          </section>
 
-              <div>
-                <SectionHeading colorClass="text-[var(--color-primary-light)]" icon="check">
-                  What You&apos;ll Do
-                </SectionHeading>
-                <CheckList items={responsibilities} colorClass="text-[var(--color-primary-light)]" />
-              </div>
+          <section className="job-section">
+            <SectionHeading colorClass="text-[var(--color-accent-light)]" icon="check">
+              What You&apos;ll Do
+            </SectionHeading>
+            <CheckList items={responsibilities} colorClass="text-[var(--color-accent-light)]" />
+          </section>
 
-              <div>
-                <SectionHeading colorClass="text-[var(--color-accent)]" icon="person">
-                  Required Experience
-                </SectionHeading>
-                <CheckList items={requiredExperience} colorClass="text-[var(--color-accent)]" />
-              </div>
+          <section className="job-section">
+            <SectionHeading colorClass="text-[var(--color-accent-light)]" icon="person">
+              Required Experience
+            </SectionHeading>
+            <CheckList items={requiredExperience} colorClass="text-[var(--color-accent-light)]" />
+          </section>
 
-              <div>
-                <SectionHeading colorClass="text-sky-300" icon="plus">
-                  Helpful Experience
-                </SectionHeading>
-                <CheckList items={preferredExperience} colorClass="text-sky-300" />
-              </div>
+          <section className="job-section">
+            <SectionHeading colorClass="text-[var(--color-accent-light)]" icon="plus">
+              Helpful Experience
+            </SectionHeading>
+            <CheckList items={preferredExperience} colorClass="text-[var(--color-accent-light)]" />
+          </section>
 
-              <div>
-                <SectionHeading colorClass="text-emerald-400" icon="spark">
-                  Why This Role Matters
-                </SectionHeading>
-                <CheckList items={impact} colorClass="text-emerald-400" />
-              </div>
-            </div>
-
-            <div className="p-8 md:p-10 bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-accent)]/5 border-t border-white/10 text-center">
-              <p className="text-gray-300 mb-6 text-lg">
-                Interested in building the systems behind HydroDrive? Send us your resume and a brief introduction.
-              </p>
-              <a
-                href={`mailto:support@hydrodriveusa.com?subject=${encodeURIComponent(`${title} Application`)}`}
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-              >
-                Apply by Email
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8.25l8.378 5.027a1.25 1.25 0 001.244 0L21 8.25M5.25 19.5h13.5A2.25 2.25 0 0021 17.25v-10.5A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75v10.5a2.25 2.25 0 002.25 2.25z" />
-                </svg>
-              </a>
-            </div>
+          <section className="job-section">
+            <SectionHeading colorClass="text-[var(--color-accent-light)]" icon="spark">
+              Why This Role Matters
+            </SectionHeading>
+            <CheckList items={impact} colorClass="text-[var(--color-accent-light)]" />
+          </section>
+          <div className="job-end-apply">
+            <a
+              href={`mailto:support@hydrodriveusa.com?subject=${encodeURIComponent(`${title} Application`)}`}
+              className="button"
+            >
+              Apply by Email
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8.25l8.378 5.027a1.25 1.25 0 001.244 0L21 8.25M5.25 19.5h13.5A2.25 2.25 0 0021 17.25v-10.5A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75v10.5a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
-
     </main>
   );
 }
