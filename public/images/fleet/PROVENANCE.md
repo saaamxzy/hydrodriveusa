@@ -11,7 +11,7 @@ The courtyard is a generated photo setting, not a photograph of HydroDrive premi
 | cayenne.jpeg | cayenne-master.png | cayenne.webp | 1448 × 1086 |
 | gwagon.jpeg | gwagon-master.png | gwagon.webp | 1448 × 1086 |
 
-The AVIF inputs were decoded to PNG for tool compatibility, without visual editing. The Bolt composite established the shared setting; the other three calls referenced both their original vehicle photo and that master. background-master.png is the empty reusable setting, derived by removing the vehicle from the Bolt composite. PNG masters are unmodified tool outputs. WebP files are quality-88 encodings, not crops. The site shows the disclosure “HydroDrive vehicle photos with generated backgrounds.”
+The AVIF inputs were decoded to PNG for tool compatibility, without visual editing. The Bolt composite established the shared setting; the other three calls referenced both their original vehicle photo and that master. background-master.png is the empty reusable setting, derived by removing the vehicle from the Bolt composite. PNG masters are unmodified tool outputs. WebP files are quality-88 encodings, not crops. At the owner's request on 2026-10-24, public captions and alt text describe the vehicles without background-generation wording; this document retains the source and editing record.
 
 ## Exact prompts
 

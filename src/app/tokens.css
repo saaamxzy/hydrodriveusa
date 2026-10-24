@@ -1,10 +1,24 @@
 @theme static {
-  --color-primary: #0a6e5c;
-  --color-primary-light: #0d8a73;
-  --color-primary-dark: #085447;
-  --color-accent-light: #48cae4;
+  /* Sampled from public/logo.png: background and droplet, respectively. */
+  --color-logo-cyan: #0097b2;
+  --color-logo-light: #e6e8e6;
+  --color-primary: var(--color-logo-cyan);
+  --color-primary-light: color-mix(in srgb, var(--color-logo-cyan) 82%, var(--color-white));
+  --color-primary-dark: color-mix(in srgb, var(--color-logo-cyan) 64%, var(--color-dark));
+  --color-accent-light: color-mix(in srgb, var(--color-logo-cyan) 50%, var(--color-white));
   --color-dark: #0a1628;
   --color-dark-light: #1a2744;
+  --color-white: #ffffff;
+  --color-light-surface: var(--color-logo-light);
+  --color-light-text: color-mix(in srgb, var(--color-dark) 76%, var(--color-white));
+  --color-light-rule: color-mix(in srgb, var(--color-dark) 15%, var(--color-white));
+  --color-light-muted: color-mix(in srgb, var(--color-dark) 65%, var(--color-white));
+  --color-on-dark-brand: var(--color-logo-light);
+  --color-on-dark-brand-rule: color-mix(in srgb, var(--color-logo-light) 35%, var(--color-primary-dark));
+  --color-on-primary: var(--color-dark);
+  --color-on-primary-rule: color-mix(in srgb, var(--color-dark) 30%, var(--color-primary));
+  --color-hero-start: var(--color-logo-cyan);
+  --color-hero-end: color-mix(in srgb, var(--color-logo-cyan) 90%, var(--color-logo-light));
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
@@ -27,19 +41,19 @@
   --color-paper: var(--color-dark);
   --color-paper-2: var(--color-dark-light);
   --color-paper-3: var(--color-primary-dark);
-  --color-ink: #ffffff;
+  --color-ink: var(--color-logo-light);
   --color-ink-2: #d1d5db;
   --color-muted: #9ca3af;
   --color-rule: color-mix(in srgb, var(--color-ink) 24%, var(--color-dark));
-  --color-accent: #00b4d8;
+  --color-accent: var(--color-logo-cyan);
   --color-accent-ink: var(--color-dark);
   --color-focus: var(--color-accent-light);
   --font-display: system-ui, -apple-system, sans-serif;
   --font-body: system-ui, -apple-system, sans-serif;
   --font-outlier: var(--font-body);
-  --radius-card: 8px;
-  --radius-pill: 6px;
-  --shadow-card: none;
+  --radius-card: 24px;
+  --radius-pill: 10px;
+  --shadow-card: 0 16px 40px color-mix(in srgb, var(--color-dark) 7%, transparent);
   --tracking-display: -0.02em;
 }
 :root {
@@ -59,7 +73,7 @@
   --container: 1280px;
   --gutter: 48px;
   --gap-columns: 32px;
-  --section-gap-s: 120px;
+  --section-gap-s: 100px;
   --section-gap: 144px;
   --section-gap-l: 176px;
   --z-base: 1;
@@ -73,4 +87,4 @@
   --rule-hair: 1px;
 }
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
-@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+@media (max-width: 40rem) { :root { --gutter: 20px; --section-gap-s: 64px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 20px; } }
