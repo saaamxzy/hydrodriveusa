@@ -55,25 +55,18 @@ function Header() {
 function Hero() {
   return (
     <section className="home-hero">
-      <div className="container hero-grid">
-        <div>
-          <h1 className="hero-title">Vehicle rentals in Orange County.</h1>
-          <p className="hero-lead">Hydrogen, electric, hybrid and fuel-efficient gas vehicles from $20/day.</p>
+      <div className="container">
+        <div className="hero-copy">
+          <h1 className="hero-title">
+            <span>Electric days.</span>{" "}
+            <span>Luxury getaways.</span>
+          </h1>
+          <p className="hero-lead">Discover Orange County with HydroDrive. Choose a lower-emission ride for your everyday plans, or make room for a little luxury.</p>
           <div className="hero-actions">
-            <a href="#book" className="button">Find your rental</a>
-            <a href="#about" className="button-secondary">About HydroDrive</a>
+            <a href="#book" className="button">Book your drive
+              <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6 6 6-6 6" /></svg>
+            </a>
           </div>
-        </div>
-        <div className="hero-offer" aria-label="Rental offer">
-          {[
-            { value: "$20+", label: "Per Day" },
-            { value: "Lower", label: "Emissions" },
-            { value: "45%", label: "Off Monthly" },
-          ].map((stat) => (
-            <div key={stat.label} className={stat.label === "Per Day" ? "hero-stat hero-stat-price" : "hero-stat"}>
-              <strong>{stat.value}</strong><span>{stat.label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -170,7 +163,7 @@ function Fleet() {
       <div className="container">
         <div className="section-head">
           <h2 className="section-heading">Our Fleet</h2>
-          <p className="section-intro">Choose from our range of eco-friendly and fuel-efficient vehicles, all mechanic-verified and ready to drive.</p>
+          <p className="section-intro">From lower-emission options to luxury favorites, find a vehicle for your kind of trip. Every rental is mechanic-verified and ready to drive.</p>
         </div>
         <div className="fleet-layout">
           <div>
@@ -182,14 +175,13 @@ function Fleet() {
                 { file: "gwagon", label: "Mercedes-Benz G-Class" },
               ].map((photo) => (
                 <figure key={photo.file} className="fleet-portrait">
-                  <Image src={`/images/fleet/${photo.file}.webp`} alt={`${photo.label} from the HydroDrive fleet, with a generated courtyard background`} width={1448} height={1086} sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 960px) 44vw, 22vw" />
+                  <Image src={`/images/fleet/${photo.file}.webp`} alt={`${photo.label} from the HydroDrive fleet`} width={1448} height={1086} sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1280px) 46vw, 576px" loading="eager" />
                   <figcaption>{photo.label}</figcaption>
                 </figure>
               ))}
             </div>
-            <p className="photo-note">HydroDrive vehicle photos with generated backgrounds.</p>
           </div>
-          <div>
+          <div className="fleet-categories">
             {vehicles.map((v) => (
               <article key={v.type} className="fleet-row">
                 <h3>{v.type}</h3>
@@ -234,7 +226,7 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="home-section">
+    <section id="pricing" className="home-section pricing-section">
       <div className="container">
         <div className="section-head">
           <h2 className="section-heading">Simple Pricing</h2>
@@ -242,7 +234,7 @@ function Pricing() {
         </div>
         <div className="pricing-list">
           {plans.map((plan) => (
-            <article key={plan.name} className="price-row">
+            <article key={plan.name} className={plan.highlight ? "price-row is-featured" : "price-row"}>
               <div>
                 <h3>{plan.name}</h3>
                 <span className="price-value">{plan.price}</span>
