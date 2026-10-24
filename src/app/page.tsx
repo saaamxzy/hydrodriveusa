@@ -288,7 +288,7 @@ function Testimonials() {
               </svg></div></div>
             <div className="trust-label">Average Rating</div>
           </div>
-          <div className="trust-fact"><div className="trust-value">1300+</div><div className="trust-label"><strong>Verified</strong><br />Trips Completed on Turo</div></div>
+          <div className="trust-fact"><div className="trust-value">2000+</div><div className="trust-label"><strong>Verified</strong><br />Trips Completed on Turo</div></div>
           <div className="trust-fact"><div className="trust-value">Top</div><div className="trust-label"><strong>Rated Host</strong><br />On Turo in Orange County</div></div>
         </div>
       </div>
