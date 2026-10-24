@@ -7,46 +7,29 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-dark)]/95 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="" width={36} height={36} className="rounded-full" unoptimized />
-            <span className="text-white font-bold text-xl">
-              Hydro<span className="text-[var(--color-accent)]">Drive</span>
-            </span>
+    <header className="site-header">
+      <div className="container">
+        <div className="header-row">
+          <a href="#" className="brand" aria-label="HydroDrive home">
+            <Image src="/logo.png" alt="" width={36} height={36} unoptimized />
+            <span className="brand-name">Hydro<span className="brand-accent">Drive</span></span>
           </a>
-
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="desktop-nav" aria-label="Main navigation">
             {["About", "Fleet", "Pricing", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-              >
-                {item}
-              </a>
+              <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">{item}</a>
             ))}
-            <a
-              href="/career"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-            >
-              Careers
-            </a>
-            <a
-              href="#book"
-              className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors"
-            >
-              Book Now
-            </a>
+            <a href="/career" className="nav-link">Careers</a>
+            <a href="#book" className="button">Book Now</a>
           </nav>
-
           <button
-            className="md:hidden text-white"
+            type="button"
+            className="menu-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -55,34 +38,14 @@ function Header() {
             </svg>
           </button>
         </div>
-
         {menuOpen && (
-          <div className="md:hidden pb-4 border-t border-white/10 mt-2 pt-4">
+          <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
             {["About", "Fleet", "Pricing", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block py-2 text-gray-300 hover:text-white transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
+              <a key={item} href={`#${item.toLowerCase()}`} className="nav-link" onClick={() => setMenuOpen(false)}>{item}</a>
             ))}
-            <a
-              href="/career"
-              className="block py-2 text-gray-300 hover:text-white transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Careers
-            </a>
-            <a
-              href="#book"
-              className="inline-block mt-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Book Now
-            </a>
-          </div>
+            <a href="/career" className="nav-link" onClick={() => setMenuOpen(false)}>Careers</a>
+            <a href="#book" className="button" onClick={() => setMenuOpen(false)}>Book Now</a>
+          </nav>
         )}
       </div>
     </header>
@@ -91,56 +54,24 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[var(--color-dark)] overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-primary)]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10">
-          <span className="text-[var(--color-accent)] text-sm font-medium">
-            Eco-Friendly Vehicle Rentals
-          </span>
+    <section className="home-hero">
+      <div className="container hero-grid">
+        <div>
+          <h1 className="hero-title">Vehicle rentals in Orange County.</h1>
+          <p className="hero-lead">Hydrogen, electric, hybrid and fuel-efficient gas vehicles from $20/day.</p>
+          <div className="hero-actions">
+            <a href="#book" className="button">Find your rental</a>
+            <a href="#about" className="button-secondary">About HydroDrive</a>
+          </div>
         </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Drive Clean.<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary-light)] to-[var(--color-accent)]">
-            Drive HydroDrive.
-          </span>
-        </h1>
-
-        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-          Explore Southern California in hydrogen fuel cell, electric, hybrid, and fuel-efficient gas vehicles.
-          Starting at just <span className="text-white font-semibold">$20/day</span>.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#book"
-            className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-          >
-            Browse Vehicles
-          </a>
-          <a
-            href="#about"
-            className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <div className="hero-offer" aria-label="Rental offer">
           {[
             { value: "$20+", label: "Per Day" },
             { value: "Lower", label: "Emissions" },
             { value: "45%", label: "Off Monthly" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-              <div className="text-gray-500 text-sm mt-1">{stat.label}</div>
+            <div key={stat.label} className={stat.label === "Per Day" ? "hero-stat hero-stat-price" : "hero-stat"}>
+              <strong>{stat.value}</strong><span>{stat.label}</span>
             </div>
           ))}
         </div>
@@ -153,7 +84,7 @@ function About() {
   const features = [
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
         </svg>
       ),
@@ -163,7 +94,7 @@ function About() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
@@ -173,7 +104,7 @@ function About() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
         </svg>
       ),
@@ -183,7 +114,7 @@ function About() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
         </svg>
@@ -195,35 +126,24 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#0d1b2e]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Why HydroDrive?
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            We specialize in eco-friendly transportation solutions, offering lower-emission
-            driving options across Southern California.
-          </p>
+    <section id="about" className="home-section about-section">
+      <div className="container">
+        <div className="section-head">
+          <h2 className="section-heading">Why HydroDrive?</h2>
+          <p className="section-intro">We specialize in eco-friendly transportation solutions, offering lower-emission driving options across Southern California.</p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="feature-list">
           {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="bg-[var(--color-dark-light)] rounded-2xl p-6 border border-white/5 hover:border-[var(--color-primary)]/30 transition-colors"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)] mb-4">
-                {feature.icon}
-              </div>
-              <h3 className="text-white font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+            <div key={feature.title} className="feature-item">
+              {feature.icon}
+              <div><h3>{feature.title}</h3><p>{feature.description}</p></div>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
+
 }
 
 function Fleet() {
@@ -232,63 +152,60 @@ function Fleet() {
       type: "Hydrogen Fuel Cell",
       tagline: "The future of driving",
       description: "Experience cutting-edge hydrogen fuel cell technology. Refuel in minutes, drive for hundreds of miles with zero tailpipe emissions.",
-      gradient: "from-emerald-500/20 to-teal-500/20",
-      accent: "text-emerald-400",
-      border: "border-emerald-500/20",
     },
     {
       type: "Electric Vehicles",
       tagline: "Silent power",
       description: "Fully electric vehicles with instant torque and smooth, quiet rides. Perfect for city commutes and weekend adventures.",
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      accent: "text-blue-400",
-      border: "border-blue-500/20",
     },
     {
       type: "Hybrid Vehicles",
       tagline: "Best of both worlds",
       description: "Combine electric efficiency with gasoline flexibility. Ideal for longer trips while still reducing your carbon footprint.",
-      gradient: "from-violet-500/20 to-purple-500/20",
-      accent: "text-violet-400",
-      border: "border-violet-500/20",
     },
   ];
 
   return (
-    <section id="fleet" className="py-24 bg-[var(--color-dark)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Our Fleet</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Choose from our range of eco-friendly and fuel-efficient vehicles, all mechanic-verified and ready to drive.
-          </p>
+    <section id="fleet" className="home-section fleet-section">
+      <div className="container">
+        <div className="section-head">
+          <h2 className="section-heading">Our Fleet</h2>
+          <p className="section-intro">Choose from our range of eco-friendly and fuel-efficient vehicles, all mechanic-verified and ready to drive.</p>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {vehicles.map((v) => (
-            <div
-              key={v.type}
-              className={`relative rounded-2xl border ${v.border} bg-gradient-to-br ${v.gradient} p-8 hover:scale-[1.02] transition-transform`}
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-              <div className={`${v.accent} text-sm font-medium mb-2`}>{v.tagline}</div>
-              <h3 className="text-2xl font-bold text-white mb-3">{v.type}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">{v.description}</p>
-              <a
-                href="#book"
-                className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all"
-              >
-                View Availability
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+        <div className="fleet-layout">
+          <div>
+            <div className="fleet-gallery">
+              {[
+                { file: "bolt", label: "Chevrolet Bolt" },
+                { file: "crv", label: "Honda CR-V" },
+                { file: "cayenne", label: "Porsche Cayenne" },
+                { file: "gwagon", label: "Mercedes-Benz G-Class" },
+              ].map((photo) => (
+                <figure key={photo.file} className="fleet-portrait">
+                  <Image src={`/images/fleet/${photo.file}.webp`} alt={`${photo.label} from the HydroDrive fleet, with a generated courtyard background`} width={1448} height={1086} sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 960px) 44vw, 22vw" />
+                  <figcaption>{photo.label}</figcaption>
+                </figure>
+              ))}
             </div>
-          ))}
+            <p className="photo-note">HydroDrive vehicle photos with generated backgrounds.</p>
+          </div>
+          <div>
+            {vehicles.map((v) => (
+              <article key={v.type} className="fleet-row">
+                <h3>{v.type}</h3>
+                <p className="fleet-tagline">{v.tagline}</p>
+                <p>{v.description}</p>
+                <a href="#book" className="text-link">View Availability
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
+
 }
 
 function Pricing() {
@@ -317,285 +234,142 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-[#0d1b2e]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Simple Pricing</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            The longer you rent, the more you save. Discounts for 3-day, weekly, and monthly rentals.
-          </p>
+    <section id="pricing" className="home-section">
+      <div className="container">
+        <div className="section-head">
+          <h2 className="section-heading">Simple Pricing</h2>
+          <p className="section-intro">The longer you rent, the more you save. Discounts for 3-day, weekly, and monthly rentals.</p>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="pricing-list">
           {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-2xl p-8 ${
-                plan.highlight
-                  ? "bg-gradient-to-b from-[var(--color-primary)]/20 to-[var(--color-dark-light)] border-2 border-[var(--color-primary)]/40 scale-105"
-                  : "bg-[var(--color-dark-light)] border border-white/5"
-              }`}
-            >
-              {plan.highlight && (
-                <div className="text-[var(--color-accent)] text-xs font-semibold uppercase tracking-wider mb-4">
-                  Most Popular
-                </div>
-              )}
-              <h3 className="text-white text-xl font-bold mb-1">{plan.name}</h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl font-bold text-white">{plan.price}</span>
+            <article key={plan.name} className="price-row">
+              <div>
+                <h3>{plan.name}</h3>
+                <span className="price-value">{plan.price}</span>
+                <span className="price-period">{plan.period}</span>
+                {plan.highlight && <p className="price-popular">Most Popular</p>}
               </div>
-              <div className="text-gray-500 text-sm mb-6">{plan.period}</div>
-
-              <ul className="space-y-3 mb-8">
+              <ul className="price-features">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-gray-300 text-sm">
-                    <svg className="w-5 h-5 text-[var(--color-primary-light)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                  <li key={feature}>
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     {feature}
                   </li>
                 ))}
               </ul>
-
-              <a
-                href="#book"
-                className={`block text-center py-3 rounded-full font-semibold transition-colors ${
-                  plan.highlight
-                    ? "bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white"
-                    : "bg-white/5 hover:bg-white/10 text-white"
-                }`}
-              >
-                Get Started
-              </a>
-            </div>
+              <a href="#book" className="button-secondary">Get Started</a>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
+
 }
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-[var(--color-dark)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Trusted by Guests</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Don&apos;t just take our word for it. See what our guests have to say on Turo.
-          </p>
+    <section id="testimonials" className="trust-section">
+      <div className="container trust-layout">
+        <div>
+          <h2 className="section-heading">Trusted by Guests</h2>
+          <p className="section-intro">See what our guests have to say on Turo.</p>
+          <a href="https://turo.com/us/en/host/48895154" target="_blank" rel="noopener noreferrer" className="text-link">Read Reviews on Turo
+            <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+          </a>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-          <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5 text-center">
-            <div className="text-5xl font-bold text-white mb-2">4.5</div>
-            <div className="flex justify-center gap-1 mb-3">
-              {[...Array(4)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+        <div className="trust-facts">
+          <div className="trust-fact">
+            <div><div className="trust-value">4.5</div><div className="rating-stars">              {[...Array(4)].map((_, i) => (
+                <svg key={i} className="rating-star" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
-              <svg className="w-5 h-5 text-yellow-400" viewBox="0 0 20 20">
+              <svg className="rating-star" aria-hidden="true" viewBox="0 0 20 20">
                 <defs>
                   <linearGradient id="halfStar">
                     <stop offset="50%" stopColor="currentColor" />
-                    <stop offset="50%" stopColor="#374151" />
+                    <stop offset="50%" stopColor="var(--color-rating-empty)" />
                   </linearGradient>
                 </defs>
                 <path fill="url(#halfStar)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-            <div className="text-gray-400 text-sm">Average Rating</div>
+              </svg></div></div>
+            <div className="trust-label">Average Rating</div>
           </div>
-
-          <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5 text-center">
-            <div className="text-5xl font-bold text-white mb-2">1300+</div>
-            <div className="text-[var(--color-primary-light)] text-lg font-semibold mb-1">Verified</div>
-            <div className="text-gray-400 text-sm">Trips Completed on Turo</div>
-          </div>
-
-          <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5 text-center">
-            <div className="text-5xl font-bold text-white mb-2">Top</div>
-            <div className="text-[var(--color-accent)] text-lg font-semibold mb-1">Rated Host</div>
-            <div className="text-gray-400 text-sm">On Turo in Orange County</div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <a
-            href="https://turo.com/us/en/host/48895154"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-          >
-            Read Reviews on Turo
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-          </a>
+          <div className="trust-fact"><div className="trust-value">1300+</div><div className="trust-label"><strong>Verified</strong><br />Trips Completed on Turo</div></div>
+          <div className="trust-fact"><div className="trust-value">Top</div><div className="trust-label"><strong>Rated Host</strong><br />On Turo in Orange County</div></div>
         </div>
       </div>
     </section>
   );
+
 }
 
 function BookCTA() {
   return (
-    <section id="book" className="py-24 bg-[var(--color-dark)]">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <div className="rounded-3xl bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-accent)]/10 border border-white/10 p-12 md:p-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Ready to Go Green?
-          </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-            Browse our fleet on Turo and book your eco-friendly ride today.
-            Lower emissions, maximum adventure.
-          </p>
-          <a
-            href="https://turo.com/us/en/host/48895154"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-          >
-            Book on Turo
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-          </a>
+    <section id="book" className="booking-section">
+      <div className="container booking-row">
+        <div>
+          <h2 className="section-heading">Book your rental on Turo.</h2>
+          <p>Browse our fleet on Turo and book your eco-friendly ride today.</p>
         </div>
+        <a href="https://turo.com/us/en/host/48895154" target="_blank" rel="noopener noreferrer" className="button">Book on Turo
+          <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+        </a>
       </div>
     </section>
   );
+
 }
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 bg-[#0d1b2e]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>
-            <p className="text-gray-400 text-lg mb-8">
-              Have questions about our fleet or rental options? We&apos;re here to help you
-              find the perfect eco-friendly vehicle.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)]">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-gray-500 text-sm">Phone</div>
-                  <a href="tel:9182388688" className="text-white font-medium hover:text-[var(--color-accent)] transition-colors">
-                    (918) 238-8688
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)]">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-gray-500 text-sm">Location</div>
-                  <span className="text-white font-medium">Irvine, Orange County, CA</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary-light)]">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-gray-500 text-sm">Booking</div>
-                  <span className="text-white font-medium">Available on Turo &mdash; 24/7</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-[var(--color-dark-light)] rounded-2xl p-8 border border-white/5">
-            <h3 className="text-white text-xl font-bold mb-6">Send a Message</h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.location.href = "tel:9182388688";
-              }}
-              className="space-y-4"
-            >
-              <div>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)]/50 transition-colors"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)]/50 transition-colors"
-                />
-              </div>
-              <div>
-                <textarea
-                  rows={4}
-                  placeholder="How can we help?"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary)]/50 transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white py-3 rounded-xl font-semibold transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+    <section id="contact" className="home-section contact-section">
+      <div className="container contact-layout">
+        <div>
+          <h2 className="section-heading">Get in Touch</h2>
+          <p className="section-intro">Have questions about our fleet or rental options? We&apos;re here to help you find the perfect eco-friendly vehicle.</p>
+          <dl className="contact-details">
+            <div className="contact-detail"><div><dt>Phone</dt><dd><a href="tel:9182388688" className="text-link">(918) 238-8688</a></dd></div></div>
+            <div className="contact-detail"><div><dt>Location</dt><dd>Irvine, Orange County, CA</dd></div></div>
+            <div className="contact-detail"><div><dt>Booking</dt><dd>Available on Turo &mdash; 24/7</dd></div></div>
+          </dl>
         </div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            window.location.href = "tel:9182388688";
+          }}
+          className="contact-form"
+          aria-describedby="contact-form-help"
+        >
+          <div><h3>Call HydroDrive</h3><p id="contact-form-help" className="form-help">This form opens your phone app. Your entries are not sent.</p></div>
+          <div className="field"><label htmlFor="contact-name">Your name</label><input id="contact-name" type="text" placeholder="Your Name" autoComplete="name" /></div>
+          <div className="field"><label htmlFor="contact-email">Email address</label><input id="contact-email" type="email" placeholder="Email Address" autoComplete="email" /></div>
+          <div className="field"><label htmlFor="contact-message">How can we help?</label><textarea id="contact-message" rows={4} placeholder="How can we help?" /></div>
+          <button type="submit" className="button">Call HydroDrive</button>
+        </form>
       </div>
     </section>
   );
+
 }
 
 function Careers() {
   return (
-    <section id="careers" className="py-24 bg-[var(--color-dark)]">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <div className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-primary)]/10 border border-white/10 p-12 md:p-16">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10">
-            <span className="text-[var(--color-accent)] text-sm font-medium">
-              We&apos;re Hiring
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Explore a Career with HydroDrive
-          </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-            Join our mission to make clean energy vehicles accessible for local communities. See our open positions and grow with us.
-          </p>
-          <a
-            href="/career"
-            className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-          >
-            View Open Positions
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+    <section id="careers" className="careers-callout">
+      <div className="container booking-row">
+        <div>
+          <h2 className="section-heading">We&apos;re Hiring</h2>
+          <p>Join our mission to make clean energy vehicles accessible for local communities. See our open positions and grow with us.</p>
         </div>
+        <a href="/career" className="button-secondary">View Open Positions
+          <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </a>
       </div>
     </section>
   );
+
 }
 
 export default function Home() {
@@ -603,8 +377,8 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <About />
       <Fleet />
+      <About />
       <Pricing />
       <Testimonials />
       <BookCTA />
